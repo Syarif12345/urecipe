@@ -106,7 +106,7 @@
 								<li class="menu-item"><a class="menu-link" href="<?= base_url('home/about') ?>"><div>Tentang kami</div></a></li>
 
 								<?php if(session('logged_in') == TRUE): ?>
-									<li class="menu-item"><a class="menu-link" href="<?= base_url('login/logout') ?>"><div>Logout</div></a></li>
+									<li class="menu-item"><a class="menu-link" href="<?= base_url('home/login_view') ?>"><div>Logout</div></a></li>
 								<?php else: ?>
 									<li class="menu-item"><a class="menu-link" href="<?= base_url('login/index') ?>"><div>Masuk</div></a></li>
 

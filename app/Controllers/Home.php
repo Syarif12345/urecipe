@@ -64,4 +64,27 @@ class Home extends BaseController
         return view('detail_makanan', $data);
     }
     
+    public function detail_kue()
+    {
+        $model = new ResepModel();
+        
+        $request = service('request');
+        $id = $request->getGet('id'); // Use getGet() instead of getVar()
+
+        $data['resep'] = $model->where('id_resep', $id)->findAll();
+
+        return view('detail_kue', $data);
+    }
+
+    public function detail_minuman()
+    {
+        $model = new ResepModel();
+        
+        $request = service('request');
+        $id = $request->getGet('id'); // Use getGet() instead of getVar()
+
+        $data['resep'] = $model->where('id_resep', $id)->findAll();
+
+        return view('detail_minuman', $data);
+    }
 }

@@ -138,7 +138,7 @@
 									<p class="mb-5"><?php echo $item->deskripsi_resep; ?></p>
 									<td>
                 
-									<a href="<?= base_url('home/kue') ?>">Lihat Selengkapnya</a>
+									<a href="<?= base_url('home/detail_kue?id='.$item->id_resep); ?>">Lihat Selengkapnya</a>
 								</div>
 								
 							</div>

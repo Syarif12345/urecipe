@@ -21,6 +21,11 @@ $routes->get('home/login_view', 'Login::index');
 $routes->post('/login/process', 'Login::process');
 $routes->get('/logout', 'Login::logout'); 
 $routes->get('/admin/index', 'Admin::index');
+$routes->get('admin/daftar_menu', 'Admin::daftar_menu');
+
+
+$routes->get('admin/create', 'Admin::create');
+$routes->post('admin/store', 'Admin::store');
 
 
 

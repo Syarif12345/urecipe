@@ -39,7 +39,7 @@
             Nav header start
         ***********************************-->
         <div class="nav-header">
-            <div class="brand-logo"><a href="index.html"><b><img src="<?= base_url() ?>admin/assets/images/logo.png" alt=""> </b><span class="brand-title"><img src="<?= base_url() ?>admin/assets/images/logo-text.png" alt=""></span></a>
+            <div class="brand-logo"><a href="index.html"><b><img src="<?= base_url() ?>admin/assets/images/avatar/logo-dark.png" > </b><span class="brand-title"><img src="<?= base_url() ?>admin/assets/images/logo-dark.png"></span></a>
             </div>
             <div class="nav-control">
                 <div class="hamburger"><span class="line"></span>  <span class="line"></span>  <span class="line"></span>
@@ -75,19 +75,19 @@
                     </ul>
                 </div>
                 <div class="header-right">
-                    <ul>
+                    <!-- <ul>
                         <li class="icons">
                             <a href="javascript:void(0)">
                                 <i class="mdi mdi-comment"></i>
-                                <div class="pulse-css"></div>
+                                <div class="pulse-css"></div> -->
                             </a>
-                            <div class="drop-down animated bounceInDown">
+                            <!-- <div class="drop-down animated bounceInDown">
                                 <div class="dropdown-content-heading">
                                     <span class="pull-left">Messages</span>  
                                     <a href="#" class="pull-right text-white">View All</a>
                                     <div class="clearfix"></div>
-                                </div>
-                                <div class="dropdown-content-body">
+                                </div> -->
+                                <!-- <div class="dropdown-content-body">
                                     <ul>
                                         <li class="notification-unread">
                                             <a href="#">
@@ -98,8 +98,8 @@
                                                 </div>
                                             </a><span class="notify-close"><i class="ti-close"></i></span>
                                         </li>
-                                        <li class="notification-unread">
-                                            <a href="#">
+                                        <li class="notification-unread"> -->
+                                            <!-- <a href="#">
                                                 <img class="pull-left mr-3 avatar-img" src="<?= base_url() ?>admin/assets/images/avatar/2.jpg" alt="">
                                                 <div class="notification-content">
                                                     <div class="notification-heading">Fig Nelson</div>
@@ -113,8 +113,8 @@
                                                 <div class="notification-content">
                                                     <div class="notification-heading">Bailey Wonger</div>
                                                     <div class="notification-text">A wonderful serenit has take possession</div><small class="notification-timestamp">08 Hours ago</small>
-                                                </div>
-                                            </a><span class="notify-close"><i class="ti-close"></i></span>
+                                                </div> -->
+                                            <!-- </a><span class="notify-close"><i class="ti-close"></i></span>
                                         </li>
                                         <li>
                                             <a href="#">
@@ -127,8 +127,8 @@
                                         </li>
                                     </ul>
                                 </div>
-                            </div>
-                        </li>
+                            </div> -->
+                        <!-- </li>
                         <li class="icons">
                             <a href="javascript:void(0)">
                                 <i class="mdi mdi-bell"></i>
@@ -156,35 +156,29 @@
                                         <li><a href="#"><span class="mr-3 avatar-icon bg-success-lighten-2"><i class="fa fa-check"></i></span><div class="notification-content"><div class="notification-heading">McKenzie Inverness</div><span class="notification-text">A wonderful serenit of my entire soul.</span> <small class="notification-timestamp">20 May 2018, 15:32</small></div></a>
                                             <span class="notify-close"><i class="ti-close"></i>
                                                 </span>
-                                        </li>
-                                        <li><a href="#"><span class="mr-3 avatar-icon bg-danger-lighten-2"><i class="fa fa-close"></i></span><div class="notification-content"><div class="notification-heading">Inverness McKenzie</div><span class="notification-text">A wonderful serenit of my entire soul.</span> <small class="notification-timestamp">20 May 2018, 15:32</small></div></a>
+                                        </li> -->
+                                        <!-- <li><a href="#"><span class="mr-3 avatar-icon bg-danger-lighten-2"><i class="fa fa-close"></i></span><div class="notification-content"><div class="notification-heading">Inverness McKenzie</div><span class="notification-text">A wonderful serenit of my entire soul.</span> <small class="notification-timestamp">20 May 2018, 15:32</small></div></a>
                                             <span class="notify-close"><i class="ti-close"></i>
                                                 </span>
-                                        </li>
-                                        <li class="text-left"><a href="#" class="more-link">Show All Notifications</a>  <span class="pull-right"><i class="fa fa-angle-right"></i></span>
+                                        </li> -->
+                                        <!-- <li class="text-left"><a href="#" class="more-link">Show All Notifications</a>  <span class="pull-right"><i class="fa fa-angle-right"></i></span>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
-                        </li>
+                        </li> -->
                         <li class="icons">
                             <a href="javascript:void(0)" class="log-user">
-                                <img src="<?= base_url() ?>admin/assets/images/avatar/1.jpg" alt=""> <span>George Martin</span>  <i class="fa fa-caret-down f-s-14" aria-hidden="true"></i>
+                                <img src="<?= base_url() ?>admin/assets/images/avatar/1.jpg" alt=""> <span>Ahmad</span>  <i class="fa fa-caret-down f-s-14" aria-hidden="true"></i>
                             </a>
                             <div class="drop-down dropdown-profile animated bounceInDown">
                                 <div class="dropdown-content-body">
                                     <ul>
-                                        <li><a href="#"><i class="icon-user"></i> <span>My Profile</span></a>
-                                        </li>
-                                        <li><a href="#"><i class="icon-wallet"></i> <span>My Wallet</span></a>
-                                        </li>
                                         <li><a href="#"><i class="icon-envelope"></i> <span>Inbox</span></a>
                                         </li>
                                         <li><a href="#"><i class="fa fa-cog"></i> <span>Setting</span></a>
                                         </li>
-                                        <li><a href="#"><i class="icon-lock"></i> <span>Lock Screen</span></a>
-                                        </li>
-                                        <li><a href="#"><i class="icon-power"></i> <span>Logout</span></a>
+                                        <li><a href="<?=base_url('home/login_view') ?>"><i class="icon-power"></i> <span>Logout</span></a>
                                         </li>
                                     </ul>
                                 </div>
@@ -201,15 +195,19 @@
         <!--**********************************
             Sidebar start
         ***********************************-->
-        <!-- <div class="nk-sidebar">           
+        <div class="nk-sidebar">           
             <div class="nk-nav-scroll">
                 <ul class="metismenu" id="menu">
-                    <li class="nav-label">Dashboard</li>
+                    <li class="nav-label">Admin</li>
                     <li class="mega-menu mega-menu-lg">
-                        <a class="has-arrow" href="#" aria-expanded="false">
-                            <i class="mdi mdi-view-dashboard"></i><span class="nav-text">Dashboard</span><span class="badge bg-dpink text-white nav-badge">21</span>
+                        <a class="has-arrow" href="<?=base_url('admin/admin'); ?>" aria-expanded="false">
+                            <i class="mdi mdi-view-dashboard"></i><span class="nav-text">Tambah Menu</span><span class="badge bg-dpink text-white nav-badge">21</span>
                         </a>
-                        <ul aria-expanded="false">
+
+                        <a class="has-arrow" href="<?=base_url('admin/daftar_menu'); ?>" aria-expanded="false">
+                            <i class="mdi mdi-view-dashboard"></i><span class="nav-text">Daftar Menu</span><span class="badge bg-dpink text-white nav-badge">21</span>
+                        </a>
+                        <!-- <ul aria-expanded="false">
                             <li><a href="index-restaurent.html">Restaurant</a></li>
                             <li><a href="index-crypto.html">Crypto</a>
                             </li>
@@ -252,11 +250,11 @@
                             <li><a href="index-job.html">Job</a>
                             </li>
                         </ul>
-                    </li>
+                    </li> -->
 
                 </ul>
             </div>
-        </div> -->
+        </div>
         <!--**********************************
             Sidebar end
         ***********************************-->
@@ -268,49 +266,105 @@
             <div class="container-fluid">
                 <div class="row page-titles">
                     <div class="col p-md-0">
-                        <h4>Basic Forms</h4>
+                        <h4>Unggah Resep</h4>
                     </div>
                     <div class="col p-md-0">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">Home</a>
+                            <li class="breadcrumb-item"><a href="index.html">Admin</a>
                             </li>
                             <!-- <li class="breadcrumb-item"><a href="#">Forms</a>
                             </li> -->
-                            <li class="breadcrumb-item active">Basic Forms
+                            <li class="breadcrumb-item active"> Resep
                             </li>
                         </ol>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-xl-6">
+                    <div class="col-xl-12">
                         <div class="card forms-card">
                             <div class="card-body">
-                                <h4 class="card-title mb-4">Basic Forms</h4>
+                                <h4 class="card-title mb-4">Unggah Resep</h4>
                                 <div class="basic-form">
-                                    <form>
+                                    <form method="POST" action="<?= base_url('admin/store') ?>">
                                         <div class="form-group">
-                                            <label class="text-label">Email Address*</label>
-                                            <input type="email" name="email" class="form-control" placeholder="skinner@support.com" required>
-                                        </div>
+                                        <label class="col-sm-9 col-form-label text-label">Nama Resep</label>
+                                            <div class="col-sm-12">
+                                                <div class="input-group">
+                                                    <input type="text" name="nama_resep" class="form-control" id="validation" aria-describedby="validationDefaultUsername1" required>
+                                                </div>
+                                            </div>
                                         <div class="form-group">
-                                            <label class="text-label">Password*</label>
-                                            <input type="password" name="password" class="form-control" placeholder="************" required>
-                                        </div>
+                                        <label class="col-sm-9 col-form-label text-label">Deskripsi Resep</label>
+                                            <div class="col-sm-12">
+                                                <div class="input-group">
+                                                    <textarea class="form-control" name="deskripsi_resep" id="textarea1" rows="6" required></textarea>
+                                                </div>
+                                            </div>
                                         <div class="form-group">
-                                            <div class="form-check">
-                                                <input id="checkbox1" class="form-check-input styled-checkbox" type="checkbox">
-                                                <label for="checkbox1" class="form-check-label">Check Me Out</label>
+                                        <label class="col-sm-3 col-form-label text-label">Kategori</label>
+                                            <div class="col-lg-6">
+                                                <select class="form-control" name="kategori" required>
+                                                    <option class="text-muted" disabled selected style="display: none">Pilih Kategori</option>
+                                                    <option value="Makanan">Makanan</option>
+                                                    <option value="Kue">Kue</option>
+                                                    <option value="Minuman">Minuman</option>
+                                                </select>
+                                            </div>
+                                            </div>
+                                            <div class="form-group">
+                                        <label class="col-sm-9 col-form-label text-label">Bahan-Bahan</label>
+                                            <div class="col-sm-12">
+                                                <div class="input-group">
+                                                    <textarea class="form-control" name="bahan" id="textarea1" rows="6" required></textarea>
+                                                </div>
                                             </div>
                                         </div>
-                                        <button type="submit" class="btn btn-primary btn-form mr-2">Submit</button>
-                                        <button type="button" class="btn btn-light text-dark btn-form">Cancel</button>
+                                        <div class="form-group">
+                                        <label class="col-sm-9 col-form-label text-label">Langkah-Langkah</label>
+                                            <div class="col-sm-12">
+                                                <div class="input-group">
+                                                    <textarea class="form-control" name="langkah" id="textarea1" rows="6" required></textarea>
+                                                </div>
+                                            </div>
+                                            </div>
+                                            <div class="form-group">
+                                        <label class="col-sm-3 col-form-label text-label">Pilih Level</label>
+                                            <div class="col-lg-6">
+                                                <select class="form-control" name="level" required>
+                                                    <option class="text-muted" disabled selected style="display: none">Level</option>
+                                                    <option value="Pemula">Pemula</option>
+                                                    <option value="Menengah">Menengah</option>
+                                                    <option value="Ahli">Ahli</option>
+                                                </select>
+                                            </div>
+                                            </div>
+                                            <div class="form-group">
+                                            <label class="col-sm-9 col-form-label text-label">Unggah Gambar</label>
+                                            <div class="col-sm-6">
+                                                <div class="input-group">
+                                                    <input type="file" class="form-control" id="validationDefaultUsername9" aria-describedby="inputGroupPrepend2">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                        <label class="col-sm-9 for integerInput">Waktu</label>
+                                        <div class="col-sm-6">
+                                        <input type="number" class="form-control"  id="integerInput" name="waktu" aria-describedby="inputGroupPrepend2" required />
+                                    </div>
+                                </div>
+                                        
+  
+
+
+                                        <button type="submit" class="btn btn-primary btn-form mr-2">Unggah</button>
+                                        <button type="button" class="btn btn-light text-dark btn-form">Batal</button>
                                     </form>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-6">
+                    <!-- <div class="col-xl-6">
                         <div class="card forms-card">
                             <div class="card-body">
                                 <h4 class="card-title mb-4">Horizontal Forms</h4>
@@ -346,7 +400,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- <div class="col-lg-12">
                         <div class="card form-card">
@@ -396,7 +450,7 @@
                         </div>
                     </div>
 
-                    <div class="col-xl-6">
+                    <!-- <div class="col-xl-6">
                         <div class="card forms-card">
                             <div class="card-body">
                                 <h4 class="card-title mb-4">Basic Inputs</h4>
@@ -503,7 +557,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- <div class="col-xl-6">
                         <div class="card form-card">
@@ -830,11 +884,7 @@
         <!--**********************************
             Footer start
         ***********************************-->
-        <div class="footer">
-            <div class="copyright">
-                <p>Copyright &copy; Designed by <a href="https://themeforest.net/user/digitalheaps">Digitalheaps</a>, Developed by <a href="https://themeforest.net/user/quixlab">Quixlab</a> 2018</p>
-            </div>
-        </div>
+        
         <!--**********************************
             Footer end
         ***********************************-->
