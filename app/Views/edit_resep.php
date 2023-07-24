@@ -200,12 +200,12 @@
                 <ul class="metismenu" id="menu">
                     <li class="nav-label">Admin</li>
                     <li class="mega-menu mega-menu-lg">
-                        <a href="<?=base_url('admin/admin'); ?>" aria-expanded="false">
-                            <i class="mdi mdi-view-dashboard"></i><span class="nav-text">Tambah Menu</span><span class="badge bg-dpink text-white nav-badge"></span>
+                        <a class="has-arrow" href="<?=base_url('admin/admin'); ?>" aria-expanded="false">
+                            <i class="mdi mdi-view-dashboard"></i><span class="nav-text">Tambah Menu</span><span class="badge bg-dpink text-white nav-badge">21</span>
                         </a>
 
-                        <a href="<?=base_url('admin/daftar_menu'); ?>" aria-expanded="false">
-                            <i class="mdi mdi-view-dashboard"></i><span class="nav-text">Daftar Menu</span><span class="badge bg-dpink text-white nav-badge"></span>
+                        <a class="has-arrow" href="<?=base_url('admin/daftar_menu'); ?>" aria-expanded="false">
+                            <i class="mdi mdi-view-dashboard"></i><span class="nav-text">Daftar Menu</span><span class="badge bg-dpink text-white nav-badge">21</span>
                         </a>
                         <!-- <ul aria-expanded="false">
                             <li><a href="index-restaurent.html">Restaurant</a></li>
@@ -266,7 +266,7 @@
             <div class="container-fluid">
                 <div class="row page-titles">
                     <div class="col p-md-0">
-                        <h4>Daftar Resep</h4>
+                        <h4>Edit Resep</h4>
                     </div>
                     <div class="col p-md-0">
                         <ol class="breadcrumb">
@@ -284,556 +284,74 @@
                     <div class="col-xl-12">
                         <div class="card forms-card">
                             <div class="card-body">
-                                
-                            <h4>Striped Rows</h4>
-
-                            <table class="table" style="color: black;">
-                            <thead>
-                                <tr>
-                                <th>No</th>
-                                <th>Nama Resep</th>
-                                <th>Deskripsi</th>
-                                <th>Kategori</th>
-                                <th>Level</th>
-                                <th>Waktu</th>
-                                <th>Aksi</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-
-                            <?php foreach ($resep as $index => $item) : ?>
-
-                                <tr>
-                                    <td><?= $index + 1 ?></td>
-                                    <td><?= $item->nama_resep ?></td>
-                                    <td><?= $item->deskripsi_resep ?></td>
-                                    <td><?= $item->kategori ?></td>
-                                    <td><?= $item->level ?></td>
-                                    <td><?= $item->waktu ?></td>
-                                    <td>
-                                        <a href="<?= base_url('admin/edit_resep?id=' . $item->id_resep) ?>"><button class="btn btn-warning">Edit</button></a>
-                                        <a href="<?= base_url('admin/deleteResep?id=' . $item->id_resep) ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus resep ini?')"><button class="btn btn-danger">Delete</button></a>
-                                    </td>
-                                </tr>
-
-                            <?php endforeach; ?>
-
-                            </tbody>
-                            </table>    
-
-                            </div>
-                        </div>
-                    </div>
-                    <!-- <div class="col-xl-6">
-                        <div class="card forms-card">
-                            <div class="card-body">
-                                <h4 class="card-title mb-4">Horizontal Forms</h4>
+                                <h4 class="card-title mb-4">Edit Resep</h4>
                                 <div class="basic-form">
-                                    <form>
-                                        <div class="form-group row">
-                                            <label class="col-sm-3 col-form-label text-label">Email Address *</label>
-                                            <div class="col-sm-9">
-                                                <input type="email" class="form-control" placeholder="Email">
-                                                <p class="form-text">Ex:black-level help text here</p>
+                                    <form method="POST" action="<?= base_url('admin/proses_edit') ?>">
+                                        <div class="form-group">
+                                            <label class="col-sm-9 col-form-label text-label">Nama Resep</label>
+                                            <div class="col-sm-12">
+                                                <input type="text" name="nama_resep" value="<?= $resep->nama_resep ?>" class="form-control" id="validation" aria-describedby="validationDefaultUsername1" required>
+                                                <input type="text" value="<?= $resep->id_resep ?>" name="id_resep" hidden>
                                             </div>
                                         </div>
-                                        <div class="form-group row">
-                                            <label class="col-sm-3 col-form-label text-label">Password *</label>
-                                            <div class="col-sm-9">
-                                                <input type="password" class="form-control" placeholder="Password">
+                                        <div class="form-group">
+                                            <label class="col-sm-9 col-form-label text-label">Deskripsi Resep</label>
+                                            <div class="col-sm-12">
+                                                <textarea class="form-control" name="deskripsi_resep" id="textarea1" rows="6" required><?= $resep->deskripsi_resep ?></textarea>
                                             </div>
                                         </div>
-                                        <div class="form-group row">
-                                            <div class="col-sm-9 offset-sm-3">
-                                                <div class="form-check">
-                                                    <input id="checkbox2" class="form-check-input styled-checkbox" type="checkbox">
-                                                    <label for="checkbox2" class="form-check-label">Remember Me</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-sm-12 text-right">
-                                                <button type="submit" class="btn btn-primary btn-form">Sign in</button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
-
-                    <!-- <div class="col-lg-12">
-                        <div class="card form-card">
-                            <div class="card-body">
-                                <h4 class="card-title mb-4">Inline Forms</h4>
-                                <form class="form-inline">
-                                    <div class="form-group">
-                                        <label class="sr-only" for="inlineFormInputName2">Email Address</label>
-                                        <input type="email" size="50" class="form-control mb-2 mr-sm-5" id="inlineFormInputName2" placeholder="Email Address" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="sr-only" for="inlineFormInputGroupUsername2">Password</label>
-                                        <input type="text" size="50" class="form-control mb-2 mr-sm-5" id="inlineFormInputGroupUsername2" placeholder="Password">
-                                    </div>
-                                    <div class="form-group">
-                                        <input class="form-check-input styled-checkbox" type="checkbox" id="inlineFormCheck">
-                                        <label class="form-check-label mr-sm-5" for="inlineFormCheck">Remember me</label>
-                                    </div>
-                                    <div class="form-group">
-                                        <button type="submit" class="btn btn-primary btn-form">Submit</button>
-                                    </div> -->
-                                    <!-- <div class="row">
-                                        <div class="col-lg-4">
-                                            <label class="sr-only" for="inlineFormInputName2">Email Address</label>
-                                            <input type="email" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Email Address">
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <label class="sr-only" for="inlineFormInputGroupUsername2">Password</label>
-                                            <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputGroupUsername2" placeholder="Password">
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <div class="form-check mb-2 mr-sm-2">
-                                                <input class="form-check-input" type="checkbox" id="inlineFormCheck">
-                                                <label class="form-check-label" for="inlineFormCheck">Remember me</label>
-                                            </div>
-
-                                            <button type="submit" class="btn btn-primary mb-2">Submit</button>
-                                        </div>
-                                    </div> -->
-                                    
-
-                                    
-
-                                    
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- <div class="col-xl-6">
-                        <div class="card forms-card">
-                            <div class="card-body">
-                                <h4 class="card-title mb-4">Basic Inputs</h4>
-                                <div class="basic-form">
-                                    <form>
-                                        <div class="form-group row align-items-center">
-                                            <label class="col-sm-3 col-form-label text-label">Basic Input</label>
-                                            <div class="col-sm-9">
-                                                <div class="input-group">
-                                                    <input type="text" class="form-control" id="validationDefaultUsername1" aria-describedby="validationDefaultUsername1">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row align-items-center">
-                                            <label class="col-sm-3 col-form-label text-label">Placeholder</label>
-                                            <div class="col-sm-9">
-                                                <div class="input-group">
-                                                    <input type="text" class="form-control" id="validationDefaultUsername2" placeholder="Your title in placeholder" aria-describedby="validationDefaultUsername2">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row align-items-center">
-                                            <label class="col-sm-3 col-form-label text-label">Password</label>
-                                            <div class="col-sm-9">
-                                                <div class="input-group">
-                                                    <input type="password" class="form-control" id="validationDefaultUsername3" placeholder="Password Input" aria-describedby="validationDefaultUsername3">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row align-items-center">
-                                            <label class="col-sm-3 col-form-label text-label">Read Only</label>
-                                            <div class="col-sm-9">
-                                                <div class="input-group">
-                                                    <input type="text" class="form-control" id="validationDefaultUsername4" placeholder="You can't change me" readonly aria-describedby="validationDefaultUsername4">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row align-items-center">
-                                            <label class="col-sm-3 col-form-label text-label">Disable Input</label>
-                                            <div class="col-sm-9">
-                                                <div class="input-group">
-                                                    <input type="text" class="form-control" id="validationDefaultUsername5" placeholder="Disable Text" disabled readonly aria-describedby="validationDefaultUsername5">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row align-items-center">
-                                            <label class="col-sm-3 col-form-label text-label">Select box</label>
-                                            <div class="col-lg-9">
-                                                <select class="form-control">
-                                                    <option class="text-muted" disabled selected style="display: none">Select the value Only</option>
-                                                    <option>Option 1</option>
-                                                    <option>Option 2</option>
-                                                    <option>Option 3</option>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 col-form-label text-label">Kategori</label>
+                                            <div class="col-lg-6">
+                                                <select class="form-control" name="kategori" required>
+                                                    <option class="text-muted" disabled style="display: none">Pilih Kategori</option>
+                                                    <option value="Makanan" <?= $resep->kategori === 'Makanan' ? 'selected' : '' ?>>Makanan</option>
+                                                    <option value="Kue" <?= $resep->kategori === 'Kue' ? 'selected' : '' ?>>Kue</option>
+                                                    <option value="Minuman" <?= $resep->kategori === 'Minuman' ? 'selected' : '' ?>>Minuman</option>
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="form-group row align-items-center">
-                                            <label class="col-sm-3 col-form-label text-label">Round Input</label>
-                                            <div class="col-sm-9">
-                                                <div class="input-group">
-                                                    <input type="text" class="form-control input-rounded" id="validationDefaultUsername6" placeholder="Form control round" aria-describedby="inputGroupPrepend2">
-                                                </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-9 col-form-label text-label">Bahan-Bahan</label>
+                                            <div class="col-sm-12">
+                                                <textarea class="form-control" name="bahan" id="textarea1" rows="6" required><?= $resep->bahan ?></textarea>
                                             </div>
                                         </div>
-                                        <div class="form-group row align-items-center">
-                                            <label class="col-sm-3 col-form-label text-label">Maximam length</label>
-                                            <div class="col-sm-9">
-                                                <div class="input-group">
-                                                    <input type="text" class="form-control" id="validationDefaultUsername7" placeholder="Content must in 06 charecters" maxlength="6" aria-describedby="inputGroupPrepend2">
-                                                </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-9 col-form-label text-label">Langkah-Langkah</label>
+                                            <div class="col-sm-12">
+                                                <textarea class="form-control" name="langkah" id="textarea1" rows="6" required><?= $resep->langkah ?></textarea>
                                             </div>
                                         </div>
-                                        <div class="form-group row align-items-center">
-                                            <label class="col-sm-3 col-form-label text-label">Static text</label>
-                                            <div class="col-sm-9">
-                                                <p class="text-muted">skinner@gmail.com</p>
+                                        <div class="form-group">
+                                            <label class="col-sm-3 col-form-label text-label">Pilih Level</label>
+                                            <div class="col-lg-6">
+                                                <select class="form-control" name="level" required>
+                                                    <option class="text-muted" disabled style="display: none">Level</option>
+                                                    <option value="Pemula" <?= $resep->level === 'Pemula' ? 'selected' : '' ?>>Pemula</option>
+                                                    <option value="Menengah" <?= $resep->level === 'Menengah' ? 'selected' : '' ?>>Menengah</option>
+                                                    <option value="Ahli" <?= $resep->level === 'Ahli' ? 'selected' : '' ?>>Ahli</option>
+                                                </select>
                                             </div>
                                         </div>
-                                        <div class="form-group row align-items-center">
-                                            <label class="col-sm-3 col-form-label text-label">Color</label>
-                                            <div class="col-sm-9">
-                                                <div class="input-group">
-                                                    <input type="color" class="form-control py-4" id="validationDefaultUsername8" aria-describedby="inputGroupPrepend2">
-                                                </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-9 for integerInput">Waktu</label>
+                                            <div class="col-sm-6">
+                                                <input type="number" class="form-control" id="integerInput" value="<?= $resep->waktu ?>" name="waktu" aria-describedby="inputGroupPrepend2" required />
                                             </div>
                                         </div>
-                                        <div class="form-group row align-items-center">
-                                            <label class="col-sm-3 col-form-label text-label">Upload File</label>
-                                            <div class="col-sm-9">
-                                                <div class="input-group">
-                                                    <input type="file" class="form-control" id="validationDefaultUsername9" aria-describedby="inputGroupPrepend2">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-sm-3 col-form-label text-label">Textarea</label>
-                                            <div class="col-sm-9">
-                                                <div class="input-group">
-                                                    <textarea class="form-control" id="textarea1" name="textarea1" rows="6"></textarea>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
 
-                    <!-- <div class="col-xl-6">
-                        <div class="card form-card">
-                            <div class="card-body">
-                                <h4 class="card-title mb-4">Input groups</h4>
-                                <div class="basic-form">
-                                    <form action="index.html">
-                                        <div class="input-group row mb-5">
-                                            <label class="col-sm-3 col-form-label text-label">Input Groups</label>
-                                            <div class="col-sm-9">
-                                                <div class="input-group mb-3">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text" id="basic-addon1">@</span>
-                                                    </div>
-                                                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-                                                </div>
-                                                <div class="input-group mb-3">
-                                                    <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon2">
-                                                    <div class="input-group-append">
-                                                        <span class="input-group-text" id="basic-addon2">.00</span>
-                                                    </div>
-                                                </div>
-                                                <div class="input-group mb-3">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text" id="basic-addon3">@</span>
-                                                    </div>
-                                                    <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon3">
-                                                    <div class="input-group-append">
-                                                        <span class="input-group-text" id="basic-addon4">.00</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="input-group row mb-5">
-                                            <label class="col-sm-3 col-form-label text-label">Input Groups</label>
-                                            <div class="col-sm-9">
-                                                <div class="input-group mb-3">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text" id="basic-addon5">@</span>
-                                                    </div>
-                                                    <input type="text" class="form-control form-control-lg" placeholder="Username" aria-label="Username" aria-describedby="basic-addon5">
-                                                </div>
-                                                <div class="input-group mb-3">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text" id="basic-addon6">@</span>
-                                                    </div>
-                                                    <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon7">
-                                                </div>
-                                                <div class="input-group mb-3">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text" id="basic-addon7">@</span>
-                                                    </div>
-                                                    <input type="text" class="form-control form-control-sm" aria-label="Username" aria-describedby="basic-addon7">
-                                                </div>
-                                            </div>
-                                        </div> -->
-                                        <!-- <div class="input-group row mb-5">
-                                            <label class="col-sm-3 col-form-label text-label">Checkboxes</label>
-                                            <div class="col-sm-9">
-                                                <div class="input-group mb-3">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text">
-
-                                                            <span class="form-check custom-position">
-
-                                                                <input id="checkbox11" class="form-check-input styled-checkbox" type="checkbox">
-
-                                                                <label for="checkbox11" class="form-check-label pl-3"></label>
-
-                                                            </span>
-
-                                                        </span>
-                                                    </div>
-                                                    <input type="text" class="form-control" aria-label="Text input with checkbox">
-                                                </div>
-                                            </div> -->
-                                            <!-- <label class="col-sm-3 col-form-label text-label">Radio</label>
-                                            <div class="col-sm-9">
-                                                <div class="input-group mb-3">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text">
-
-                                                            <span class="form-check custom-position">
-
-                                                                <input id="radio11" class="form-check-input" type="radio">
-
-                                                                <label class="pl-3 form-check-label" for="radio11"></label>
-
-                                                            </span>
-
-                                                        </span>
-                                                    </div>
-                                                    <input type="text" class="form-control" aria-label="Text input with checkbox">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="input-group row">
-                                            <label class="col-sm-3 col-form-label text-label">Button Addons</label>
-                                            <div class="col-sm-9">
-                                                <div class="input-group mb-3">
-                                                    <div class="input-group-prepend">
-                                                        <button class="btn btn-primary btn-flat" type="button" id="button-addon1">Go</button>
-                                                    </div>
-                                                    <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
-                                                </div>
-                                                <div class="input-group mb-3">
-                                                    <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon2">
-                                                    <div class="input-group-append">
-                                                        <button class="btn btn-primary btn-flat" type="button" id="button-addon2">Go</button>
-                                                    </div>
-                                                </div>
-                                                <div class="input-group mb-3">
-                                                    <div class="input-group-prepend">
-                                                        <button class="btn btn-success btn-flat dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action</button>
-                                                        <div class="dropdown-menu">
-                                                            <a class="dropdown-item" href="#">Action</a>
-                                                            <a class="dropdown-item" href="#">Another action</a>
-                                                            <a class="dropdown-item" href="#">Something else here</a>
-                                                            <div role="separator" class="dropdown-divider"></div>
-                                                            <a class="dropdown-item" href="#">Separated link</a>
-                                                        </div>
-                                                    </div>
-                                                    <input type="text" class="form-control" aria-label="Text input with dropdown button">
-                                                </div>
-                                                <div class="input-group mb-3">
-                                                    <input type="text" class="form-control" aria-label="Text input with dropdown button">
-                                                    <div class="input-group-prepend">
-                                                        <button class="btn btn-danger btn-flat dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action</button>
-                                                        <div class="dropdown-menu">
-                                                            <a class="dropdown-item" href="#">Action</a>
-                                                            <a class="dropdown-item" href="#">Another action</a>
-                                                            <a class="dropdown-item" href="#">Something else here</a>
-                                                            <div role="separator" class="dropdown-divider"></div>
-                                                            <a class="dropdown-item" href="#">Separated link</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
-
-                    <!-- 
-                    <div class="col-xl-6">
-                        <div class="card forms-card">
-                            <div class="card-body">
-                                <h4 class="card-title mb-4">Horizontal Forms</h4>
-                                <div class="basic-form">
-                                    <form>
-                                        <div class="form-group row">
-                                            <label class="col-sm-3 col-form-label text-label">Email Address*</label>
-                                            <div class="col-sm-9">
-                                                <div class="input-group">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text" id="inputGroupPrepend5"> <i class="fa fa-user" aria-hidden="true"></i> </span>
-                                                    </div>
-                                                    <input type="text" class="form-control" id="validationDefaultUsername12" placeholder="Username" aria-describedby="inputGroupPrepend5" required>
-                                                </div>
-                                                <p class="form-text">Ex:black-level help text here</p>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-sm-3 col-form-label text-label">Password*</label>
-                                            <div class="col-sm-9">
-                                                <div class="input-group transparent-append">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text" id="inputGroupPrepend6"> <i class="fa fa-lock" aria-hidden="true"></i> </span>
-                                                    </div>
-                                                    <input type="password" class="form-control" id="validationDefaultUsername13" placeholder="Password" aria-describedby="inputGroupPrepend6" required>
-                                                    <div class="input-group-append c-pointer">
-                                                        <span class="input-group-text" id="inputGroupPrepend7"> <i class="fa fa-eye-slash" aria-hidden="true"></i> </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-sm-10 offset-sm-3">
-                                                <div class="form-check">
-                                                    <input class="form-check-input styled-checkbox" type="checkbox" id="inlineFormCheck0">
-                                                    <label class="form-check-label mr-sm-5" for="inlineFormCheck0">Remember Me</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-sm-12 text-right">
-                                                <button type="submit" class="btn btn-primary btn-form">Sign in</button>
-                                            </div>
-                                        </div>
+                                        <button type="submit" class="btn btn-warning btn-form mr-2">Edit</button>
+                                        <button type="button" class="btn btn-light text-dark btn-form">Batal</button>
                                     </form>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-lg-12">
-                        <div class="card form-card">
-                            <div class="card-body">
-                                <h4 class="card-title mb-4">Input Validation</h4>
-                                <div class="basic-form">
-                                    <form action="#">
-                                        <div class="form-group row">
-                                            <label class="col-sm-4 col-form-label text-success">Input with Success</label>
-                                            <div class="col-sm-8">
-                                                <div class="input-group input-success">
-                                                    <input type="text" class="form-control is-valid" id="validationDefaultUsername14" aria-describedby="inputGroupPrepend8" required>
-                                                    <div class="input-group-append">
-                                                        <span class="input-group-text bg-transparent" id="inputGroupPrepend8"> <i class="fa fa-check text-success" aria-hidden="true"></i> </span>
-                                                    </div>
-                                                </div>
-                                                <p class="form-text text-success">Success! You've done it!</p>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-sm-4 col-form-label text-warning">Input with Warning</label>
-                                            <div class="col-sm-8">
-                                                <div class="input-group input-warning">
-                                                    <input type="text" class="form-control is-warning" id="validationDefaultUsername15" aria-describedby="inputGroupPrepend9" required>
-                                                    <div class="input-group-append">
-                                                        <span class="input-group-text bg-transparent" id="inputGroupPrepend9"> <i class="fa fa-bell text-warning" aria-hidden="true"></i> </span>
-                                                    </div>
-                                                </div>
-                                                <p class="form-text text-warning">Help block with warning</p>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-sm-4 col-form-label text-danger">Input with Danger</label>
-                                            <div class="col-sm-8">
-                                                <div class="input-group input-danger">
-                                                    <input type="text" class="form-control is-invalid" id="validationDefaultUsername16" aria-describedby="inputGroupPrepend10" required>
-                                                    <div class="input-group-append">
-                                                        <span class="input-group-text bg-transparent" id="inputGroupPrepend10"> <i class="fa fa-times text-danger" aria-hidden="true"></i> </span>
-                                                    </div>
-                                                </div>
-                                                <p class="form-text text-danger">Help block with Danger</p>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-6">
-                        <div class="card forms-card">
-                            <div class="card-body">
-                                <h4 class="card-title mb-4">Checkboxes</h4>
-                                <form class="basic-form">
-                                    <div class="row">
-                                        <div class="form-group col-sm-4">
-                                            <label class="text-label">Checkboxes</label>
-                                        </div>
-                                        <div class="col-sm-8">
-                                            <div class="demo-checkbox">
-                                                <div>
-                                                    <input checked type="checkbox" class="filled-in chk-col-primary" id="md_checkbox_22">
-                                                    <label for="md_checkbox_22">Checked</label>
-                                                </div>
-                                                <div>
-                                                    <input disabled type="checkbox" class="filled-in chk-col-primary" id="md_checkbox_23">
-                                                    <label for="md_checkbox_23">Disable Unchecked</label>
-                                                </div>
-                                                <div>
-                                                    <input disabled checked type="checkbox" class="filled-in chk-col-primary" id="md_checkbox_24">
-                                                    <label for="md_checkbox_24">Disable Checked</label>
-                                                </div>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-6">
-                        <div class="card forms-card">
-                            <div class="card-body">
-                                <h4 class="card-title mb-4">Radio Boxes</h4>
-                                <div class="basic-form">
-                                    <div class="row">
-                                        <div class="form-group col-sm-4">
-                                            <label class="text-label">Radio Boxes</label>
-                                        </div>
-                                        <div class="col-sm-8">
-                                            <div class="demo-checkbox">
-                                                <div>
-                                                    <input name="Unchecked" type="radio" class="filled-in chk-col-primary" id="md_checkbox_25">
-                                                    <label for="md_checkbox_25">Unchecked</label>
-                                                </div>
-                                                <div>
-                                                    <input name="Checked" checked type="radio" class="filled-in chk-col-primary" id="md_checkbox_26">
-                                                    <label for="md_checkbox_26">Checked</label>
-                                                </div>
-                                                <div>
-                                                    <input name="Disable" disabled type="radio" class="filled-in chk-col-primary" id="md_checkbox_27">
-                                                    <label for="md_checkbox_27">Disable Unchecked</label>
-                                                </div>
-                                                <div>
-                                                    <input name="Checked" disabled checked type="radio" class="filled-in chk-col-primary" id="md_checkbox_28">
-                                                    <label for="md_checkbox_28">Disable Checked</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
                 </div>
 
-            </div>
+
+                    
             <!-- #/ container -->
         </div>
         <!--**********************************
